@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <h1>Client Dashboard</h1>
+    <div class="client-list">
+        <h2>Clients</h2>
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Eye Color</th>
+                <th>Hair Color</th>
+            </tr>
+            {% for client in clients %}
+            <tr>
+                <td>{{ client.first_name }}</td>
+                <td>{{ client.last_name }}</td>
+                <td>{{ client.dob }}</td>
+                <td>{{ client.height }}</td>
+                <td>{{ client.weight }}</td>
+                <td>{{ client.eye_color }}</td>
+                <td>{{ client.hair_color }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

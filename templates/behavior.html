@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Behavior Reports{% endblock %}
+
+{% block content %}
+<h2>Behavior Reports</h2>
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for behavior in behaviors %}
+        <tr>
+            <td>{{ behavior.client.first_name }} {{ behavior.client.last_name }}</td>
+            <td>{{ behavior.date }}</td>
+            <td>{{ behavior.time }}</td>
+            <td>{{ behavior.description }}</td>
+            <td>
+                <a href="{{ url_for('edit_behavior', behavior_id=behavior.id) }}">Edit</a> |
+                <a href="{{ url_for('delete_behavior', behavior_id=behavior.id) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

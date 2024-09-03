@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome - Esperanza's Homes of Hope{% endblock %}
+
+{% block content %}
+<div class="homepage-container">
+    <header class="homepage-header">
+        <h1>Esperanza's Homes of Hope</h1>
+        <p>Welcome to the Client Management System</p>
+    </header>
+
+    <div class="stat-container">
+        <div class="stat-box blue">
+            <div class="stat-number">5</div>
+            <div class="stat-label">All Issues</div>
+        </div>
+        <div class="stat-box red">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Open Issues</div>
+        </div>
+        <div class="stat-box green">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Closed Issues</div>
+        </div>
+        <div class="stat-box teal">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Clients</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Medications{% endblock %}
+
+{% block content %}
+<h2>Medications</h2>
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Medication Name</th>
+            <th>Dosage</th>
+            <th>Frequency</th>
+            <th>Prescribing Doctor</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for medication in medications %}
+        <tr>
+            <td>{{ medication.client.first_name }} {{ medication.client.last_name }}</td>
+            <td>{{ medication.name }}</td>
+            <td>{{ medication.dosage }}</td>
+            <td>{{ medication.frequency }}</td>
+            <td>{{ medication.prescribing_doctor }}</td>
+            <td>
+                <a href="{{ url_for('edit_medication', medication_id=medication.id) }}">Edit</a> |
+                <a href="{{ url_for('delete_medication', medication_id=medication.id) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
